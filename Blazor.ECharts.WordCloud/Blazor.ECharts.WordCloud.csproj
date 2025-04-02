@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 	<Import Project="..\Version.props" />
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net8.0;net9.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<Version>$(PackageVersion)</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Authors>lishewen</Authors>
@@ -30,9 +30,6 @@
 		<None Include="..\favicon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.*" />
-	</ItemGroup>
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.*" />
 	</ItemGroup>
