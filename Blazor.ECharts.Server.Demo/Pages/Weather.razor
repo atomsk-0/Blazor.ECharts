@@ -1,0 +1,51 @@
+﻿@page "/weather"
+
+@attribute [StreamRendering]
+
+<PageTitle>广西梧州市未来一周气温变化</PageTitle>
+
+<h1>广西梧州市未来一周气温变化</h1>
+<p>本页面数据来源腾讯天气API（wis.qq.com）仅作学习演示使用</p>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>最高温度. (°C)</th>
+                <th>最低温度. (°C)</th>
+                <th>白天气候</th>
+                <th>白天风向</th>
+                <th>白天风力</th>
+                <th>夜晚气候</th>
+                <th>夜晚风向</th>
+                <th>夜晚风力</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.time</td>
+                    <td>@forecast.max_degree</td>
+                    <td>@forecast.min_degree</td>
+                    <td>@forecast.day_weather</td>
+                    <td>@forecast.day_wind_direction</td>
+                    <td>@forecast.day_wind_power</td>
+                    <td>@forecast.night_weather</td>
+                    <td>@forecast.night_wind_direction</td>
+                    <td>@forecast.night_wind_power</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<hr />
+<div class="chart-container">
+    <Blazor.ECharts.Components.ELine Option="@Option" Class="chart-fill" Theme="dark"></Blazor.ECharts.Components.ELine>
+</div>

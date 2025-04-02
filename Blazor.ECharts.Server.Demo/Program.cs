@@ -10,6 +10,11 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddECharts();
 
+builder.Services.AddHttpClient("WeatherAPI", client =>
+{
+    client.BaseAddress = new Uri("https://wis.qq.com");
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
