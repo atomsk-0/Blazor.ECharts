@@ -122,6 +122,7 @@ namespace Blazor.ECharts.Options
         /// 无法在类目轴中使用。在时间轴（type: 'time'）中需要传时间戳，在对数轴（type: 'log'）中需要传指数值。
         /// </summary>
         public object Interval { get; set; }
+        public bool? Show { set; get; }
     }
     public record XAxis : Axis
     {
