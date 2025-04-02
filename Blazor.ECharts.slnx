@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="favicon.png" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="Version.props" />
+  </Folder>
+  <Project Path="Blazor.ECharts.Demo/Blazor.ECharts.Demo.csproj" />
+  <Project Path="Blazor.ECharts.Server.Demo/Blazor.ECharts.Server.Demo.csproj" />
+  <Project Path="Blazor.ECharts.WebApp.Demo/Blazor.ECharts.WebApp.Demo.Client/Blazor.ECharts.WebApp.Demo.Client.csproj" />
+  <Project Path="Blazor.ECharts.WebApp.Demo/Blazor.ECharts.WebApp.Demo/Blazor.ECharts.WebApp.Demo.csproj" />
+  <Project Path="Blazor.ECharts.WordCloud/Blazor.ECharts.WordCloud.csproj" />
+  <Project Path="Blazor.ECharts/Blazor.ECharts.csproj" />
+</Solution>
