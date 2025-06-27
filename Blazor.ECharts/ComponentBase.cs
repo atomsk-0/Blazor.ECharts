@@ -354,7 +354,16 @@ namespace Blazor.ECharts
         public async ValueTask DisposeAsync()
         {
             if (IsPrerenderPhase) return;
-            await RemoveResizeListener();
+
+            try
+            {
+                await RemoveResizeListener();
+            }
+            catch (JSDisconnectedException)
+            {
+                // Ignore
+            }
+
             _objectReference?.Dispose();
             GC.SuppressFinalize(this);
         }
